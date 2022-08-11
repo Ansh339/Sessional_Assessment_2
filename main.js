@@ -143,3 +143,78 @@ var form = document.getElementById('form')
         `
         document.querySelector('#data-display').innerHTML = store
       })
+
+      document.querySelector('#search-data').addEventListener('click', (e) => 
+      {
+          e.preventDefault()
+      
+          const xhr1 = new XMLHttpRequest()
+          let searchData = document.getElementById('collect-data').value
+          const source1 = 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09'
+      
+          xhr1.open('GET',source1)
+          console.log('Mouse clicked')
+          console.log(searchData);
+      
+          xhr1.onreadystatechange = () =>
+          {
+              if(xhr1.readyState === 4 && xhr1.status === 200)
+              {
+                  console.log("Connection Successful");
+                  const response = JSON.parse(xhr1.responseText)
+      
+                  console.log("Working");
+                  let put = ''
+                  console.log('Working2');
+                  put = `
+                      <div class = "search-detail-info">
+                              <p>ID - ${response[searchData - 1].id}
+                              <p>NAME - ${response[searchData - 1].name}</p>
+                              <p>USERNAME - ${response[searchData - 1].username}</p>
+                              <p>EMAIL - ${response[searchData - 1].email}</p>
+                              <div>
+                                  <p>ADDRESS</p>
+                                  <ul>
+                                      <li>
+                                          <p>STREET - ${response[searchData - 1].address.street}</p>
+                                      </li>
+                                      <li>
+                                          <p>SUITE - ${response[searchData - 1].address.suite}</p>
+                                      </li>
+                                      <li>
+                                          <p>CITY - ${response[searchData - 1].address.city}</p>
+                                      </li>
+                                      <li>
+                                          <p>ZIPCODE - ${response[searchData - 1].address.zipcode}</p>
+                                      </li>
+                                      <li>
+                                          <p>LATITUDE - ${response[searchData - 1].address.geo.lat}</p>
+                                      </li>
+                                      <li>
+                                          <p>LONGITUDE - ${response[searchData - 1].address.geo.lng}</p>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <p>CONTACT - ${response[searchData - 1].phone}</p>
+                              <p>WEBSITE - ${response[searchData - 1].website}</p>
+                              <div>
+                                  <p>COMPANY</p>
+                                  <ul>
+                                      <li>
+                                          <p>NAME - ${response[searchData - 1].company.name}</p>
+                                      </li>
+                                      <li>
+                                          <p>CATCHPHRASE - ${response[searchData - 1].company.catchPhrase}</p>
+                                      </li>
+                                      <li>
+                                          <p>BS - ${response[searchData - 1].company.bs}</p>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                  `
+                  document.querySelector('#search-container').innerHTML = put
+              }
+          }
+          xhr1.send()
+      })
