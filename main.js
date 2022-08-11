@@ -19,6 +19,7 @@ xhr.onreadystatechange = () =>
         {
             output +=  `
             <div class = "detail-info">
+                <p>ID: ${response[i].id}</p>
                 <p>NAME: ${response[i].name}</p>
                 <p>USERNAME: ${response[i].username}</p>
                 <p>EMAIL: ${response[i].email}</p>
