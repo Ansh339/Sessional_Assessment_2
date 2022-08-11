@@ -17,11 +17,13 @@ xhr.onreadystatechange = () =>
         for(let i = 0; i < response.length; i++)
         {
             output +=  `
-            <p>NAME = ${response[i].name}</p>
-            <p>USERNAME = ${response[i].username}</p>
-            <p>EMAIL = ${response[i].email}</p>
-            <p>CONTACT = ${response[i].phone}</p>
-            <p>WEBSITE = ${response[i].website}</p>
+            <div>
+                <p>NAME = ${response[i].name}</p>
+                <p>USERNAME = ${response[i].username}</p>
+                <p>EMAIL = ${response[i].email}</p>
+                <p>CONTACT = ${response[i].phone}</p>
+                <p>WEBSITE = ${response[i].website}</p>
+            </div>
             `
         }
 
