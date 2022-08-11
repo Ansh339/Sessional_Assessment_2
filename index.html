@@ -16,10 +16,6 @@
           <!-- LOGO -->
             <div class="container-fluid">
               <img class="navbar-brand" src="./assets/logo.jpg" alt="Company Logo" style="width: 150px;">
-              <!-- <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                </ul>
-              </div> -->
               <div class="d-flex" id="navbarColor01">
                 <!-- LIST ITEMS -->
                 <ul class="navbar-nav me-auto">
@@ -29,11 +25,11 @@
                   <li class="nav-item" style="font-size: 1.2rem;">
                     <a class="nav-link" href="#title-form">FILL FORM</a>
                   </li>                  
-                  <li class="nav-item" style="font-size: 1.2rem;">
+                  <!-- <li class="nav-item" style="font-size: 1.2rem;">
                     <a class="nav-link" href="#">FEATURES</a>
-                  </li>
+                  </li> -->
                   <li class="nav-item" style="font-size: 1.2rem;">
-                    <a class="nav-link" href="#">ABOUT</a>
+                    <a class="nav-link" href="#footer-d">ABOUT</a>
                   </li>
                 </ul>
               </div>
@@ -47,7 +43,7 @@
 
     <!-- DETAILS TITLE -->
     <div class="container" style="text-align: center;">
-        <h1 style="font-size: 100px;"><b><u>Details</u></b></h1>
+        <h1 style="font-size: 100px;"><b><u>Stored Details</u></b></h1>
     </div>
 
     <br>
@@ -90,7 +86,7 @@
           </div>
           <div class="form-group">
             <label for="street" class="form-label mt-4">Street</label>
-            <input type="email" class="form-control" id="street" aria-describedby="streetHelp" placeholder="Enter Street">
+            <input type="text" class="form-control" id="street" aria-describedby="streetHelp" placeholder="Enter Street">
           </div>
           <div class="form-group">
             <label for="suite" class="form-label mt-4">Suite</label>
@@ -140,10 +136,16 @@
 
     <br>
 
+    <!-- DISPLAY FORM DETAILS -->
     <div class="container">
       <div id="data-display" style="display: flex; flex-wrap: wrap;"></div>
     </div>
 
+    <footer>
+      <p id="footer-d">Copyright Ansh 2022</p>
+    </footer>
+
+    <!-- SCRIPT FILES -->
     <script src="./main.js"></script>
     <script>
       var form = document.getElementById('form')
@@ -172,45 +174,45 @@
 
         store += `
         <div class = "post-detail-info">
-          <p>NAME - ${name}</p>
-          <p>USERNAME - ${userName}</p>
-          <p>EMAIL - ${email}</p>
+          <p>NAME: ${name}</p>
+          <p>USERNAME: ${userName}</p>
+          <p>EMAIL: ${email}</p>
           <div>
             <p>ADDRESS</p>
             <ul>
               <li>
-                <p>STREET - ${street}</p>
+                <p>STREET: ${street}</p>
               </li>
               <li>
-                <p>SUITE - ${suite}</p>
+                <p>SUITE: ${suite}</p>
               </li>
               <li>
-                <p>CITY - ${city}</p>
+                <p>CITY: ${city}</p>
               </li>
               <li>
-                <p>ZIPCODE - ${zipcode}</p>
+                <p>ZIPCODE: ${zipcode}</p>
               </li>
               <li>
-                <p>LATITUDE - ${lat}</p>
+                <p>LATITUDE: ${lat}</p>
               </li>
               <li>
-                <p>LONGITUDE - ${lng}</p>
+                <p>LONGITUDE: ${lng}</p>
               </li>
             </ul>
           </div>
-          <p>CONTACT - ${contact}</p>
-          <p>WEBSITE - ${website}</p>
+          <p>CONTACT: ${contact}</p>
+          <p>WEBSITE: ${website}</p>
           <div>
             <p>COMPANY</p>
             <ul>
               <li>
-                <p>NAME - ${companyName}</p>
+                <p>NAME: ${companyName}</p>
               </li>
               <li>
-                <p>CATCHPHRASE - ${catchPhrase}</p>
+                <p>CATCHPHRASE: ${catchPhrase}</p>
               </li>
               <li>
-                <p>BS - ${bs}</p>
+                <p>BS: ${bs}</p>
               </li>
             </ul>
           </div>
