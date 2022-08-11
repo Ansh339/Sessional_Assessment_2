@@ -2,12 +2,26 @@
 {
     width: 20%;
     margin: 1.2em;
-    /* border: black solid 8px; */
     background-color: aquamarine;
     padding-top: 10px;
 }
 
 .detail-info p
+{
+    padding-left: 5px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.post-detail-info
+{
+    width: 20%;
+    margin: 1.2em;
+    background-color: rgb(9, 197, 53);
+    padding-top: 10px
+}
+
+.post-detail-info p
 {
     padding-left: 5px;
     font-size: 1.2rem;

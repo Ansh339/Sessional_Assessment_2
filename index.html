@@ -77,7 +77,7 @@
         <fieldset>
           <div class="form-group">
             <label for="name" class="form-label mt-4">Name</label>
-            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Name">
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Name" required>
           </div>
           <div class="form-group">
             <label for="user-name" class="form-label mt-4">User Name</label>
@@ -109,8 +109,8 @@
             <input type="number" class="form-control" id="lat" aria-describedby="latHelp" placeholder="Enter Latitude">
           </div>
           <div class="form-group">
-            <label for="long" class="form-label mt-4">Longitude</label>
-            <input type="number" class="form-control" id="long" aria-describedby="longHelp" placeholder="Enter Longitude">
+            <label for="lng" class="form-label mt-4">Longitude</label>
+            <input type="number" class="form-control" id="lng" aria-describedby="longHelp" placeholder="Enter Longitude">
           </div>
           <div class="form-group">
             <label for="contact" class="form-label mt-4">Contact</label>
@@ -121,16 +121,16 @@
             <input type="text" class="form-control" id="website" aria-describedby="websiteHelp" placeholder="Enter Website Name">
           </div>
           <div class="form-group">
-            <label for="comapanyName" class="form-label mt-4">Company Name</label>
-            <input type="text" class="form-control" id="comapanyName" aria-describedby="websiteHelp" placeholder="Enter Company Name">
-          </div>
-          <div class="form-group">
-            <label for="bs" class="form-label mt-4">BS</label>
-            <input type="text" class="form-control" id="bs" aria-describedby="websiteHelp" placeholder="Enter Company BS">
+            <label for="company-name" class="form-label mt-4">Company Name</label>
+            <input type="text" class="form-control" id="company-name" aria-describedby="companyHelp" placeholder="Enter Company Name">
           </div>
           <div class="form-group">
             <label for="catch-phrase" class="form-label mt-4">Catch Phrase</label>
-            <input type="text" class="form-control" id="catch-phrase" aria-describedby="websiteHelp" placeholder="Enter Company Catch Phrase">
+            <input type="text" class="form-control" id="catch-phrase" aria-describedby="phraseHelp" placeholder="Enter Company Catch Phrase">
+          </div>
+          <div class="form-group">
+            <label for="bs" class="form-label mt-4">BS</label>
+            <input type="text" class="form-control" id="bs" aria-describedby="bsHelp" placeholder="Enter Company BS">
           </div>
           <br>
           <button type="submit" value="post" class="btn btn-primary">Submit</button>
@@ -138,6 +138,86 @@
       </form>
     </div>
 
+    <br>
+
+    <div class="container">
+      <div id="data-display" style="display: flex; flex-wrap: wrap;"></div>
+    </div>
+
     <script src="./main.js"></script>
+    <script>
+      var form = document.getElementById('form')
+
+      form.addEventListener('submit', (e) =>
+      {
+        e.preventDefault()
+
+        var name = document.getElementById('name').value
+        var userName = document.getElementById('user-name').value
+        var email = document.getElementById('email').value
+        var street = document.getElementById('street').value
+        var suite = document.getElementById('suite').value
+        var city = document.getElementById('city').value
+        var zipcode = document.getElementById('zipcode').value
+        var lat = document.getElementById('lat').value
+        var lng = document.getElementById('lng').value
+        var contact = document.getElementById('contact').value
+        var website = document.getElementById('website').value
+        var companyName = document.getElementById('company-name').value
+        var catchPhrase = document.getElementById('catch-phrase').value
+        var bs = document.getElementById('bs').value
+        console.log(name)
+
+        let store = ''
+
+        store += `
+        <div class = "post-detail-info">
+          <p>NAME - ${name}</p>
+          <p>USERNAME - ${userName}</p>
+          <p>EMAIL - ${email}</p>
+          <div>
+            <p>ADDRESS</p>
+            <ul>
+              <li>
+                <p>STREET - ${street}</p>
+              </li>
+              <li>
+                <p>SUITE - ${suite}</p>
+              </li>
+              <li>
+                <p>CITY - ${city}</p>
+              </li>
+              <li>
+                <p>ZIPCODE - ${zipcode}</p>
+              </li>
+              <li>
+                <p>LATITUDE - ${lat}</p>
+              </li>
+              <li>
+                <p>LONGITUDE - ${lng}</p>
+              </li>
+            </ul>
+          </div>
+          <p>CONTACT - ${contact}</p>
+          <p>WEBSITE - ${website}</p>
+          <div>
+            <p>COMPANY</p>
+            <ul>
+              <li>
+                <p>NAME - ${companyName}</p>
+              </li>
+              <li>
+                <p>CATCHPHRASE - ${catchPhrase}</p>
+              </li>
+              <li>
+                <p>BS - ${bs}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        `
+        document.querySelector('#data-display').innerHTML = store
+      })
+    </script>
 </body>
 </html>
