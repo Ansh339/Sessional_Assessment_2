@@ -2,8 +2,9 @@
 {
     width: 20%;
     margin: 1.2em;
-    border: black solid 8px;
+    /* border: black solid 8px; */
     background-color: aquamarine;
+    padding-top: 10px;
 }
 
 .detail-info p
