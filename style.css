@@ -1,0 +1,14 @@
+.detail-info
+{
+    width: 20%;
+    margin: 1.2em;
+    border: black solid 8px;
+    background-color: aquamarine;
+}
+
+.detail-info p
+{
+    padding-left: 5px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
