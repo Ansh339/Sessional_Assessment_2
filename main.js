@@ -17,12 +17,49 @@ xhr.onreadystatechange = () =>
         for(let i = 0; i < response.length; i++)
         {
             output +=  `
-            <div class="detail-info">
-                <p style = "background-color: yellow">NAME = ${response[i].name}</p>
-                <p style = "background-color: red">USERNAME = ${response[i].username}</p>
-                <p style = "background-color: green">EMAIL = ${response[i].email}</p>
-                <p style = "background-color: orange">CONTACT = ${response[i].phone}</p>
-                <p style = "background-color: pink">WEBSITE = ${response[i].website}</p>
+            <div class = "detail-info">
+                <p>NAME - ${response[i].name}</p>
+                <p>USERNAME - ${response[i].username}</p>
+                <p>EMAIL - ${response[i].email}</p>
+                <div>
+                    <p>ADDRESS</p>
+                    <ul>
+                        <li>
+                            <p>STREET - ${response[i].address.street}</p>
+                        </li>
+                        <li>
+                            <p>SUITE - ${response[i].address.suite}</p>
+                        </li>
+                        <li>
+                            <p>CITY - ${response[i].address.city}</p>
+                        </li>
+                        <li>
+                            <p>ZIPCODE - ${response[i].address.zipcode}</p>
+                        </li>
+                        <li>
+                            <p>LATITUDE - ${response[i].address.geo.lat}</p>
+                        </li>
+                        <li>
+                            <p>LONGITUDE - ${response[i].address.geo.lng}</p>
+                        </li>
+                    </ul>
+                </div>
+                <p>CONTACT - ${response[i].phone}</p>
+                <p>WEBSITE - ${response[i].website}</p>
+                <div>
+                    <p>COMPANY</p>
+                    <ul>
+                        <li>
+                            <p>NAME - ${response[i].company.name}</p>
+                        </li>
+                        <li>
+                            <p>CATCHPHRASE - ${response[i].company.catchPhrase}</p>
+                        </li>
+                        <li>
+                            <p>BS - ${response[i].company.bs}</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
             `
         }
