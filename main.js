@@ -18,49 +18,51 @@ xhr.onreadystatechange = () =>
         for(let i = 0; i < response.length; i++)
         {
             output +=  `
-            <div class = "detail-info">
-                <p>ID: ${response[i].id}</p>
-                <p>NAME: ${response[i].name}</p>
-                <p>USERNAME: ${response[i].username}</p>
-                <p>EMAIL: ${response[i].email}</p>
-                <div>
-                    <p>ADDRESS</p>
-                    <ul>
-                        <li>
-                            <p>STREET: ${response[i].address.street}</p>
-                        </li>
-                        <li>
-                            <p>SUITE: ${response[i].address.suite}</p>
-                        </li>
-                        <li>
-                            <p>CITY: ${response[i].address.city}</p>
-                        </li>
-                        <li>
-                            <p>ZIPCODE: ${response[i].address.zipcode}</p>
-                        </li>
-                        <li>
-                            <p>LATITUDE: ${response[i].address.geo.lat}</p>
-                        </li>
-                        <li>
-                            <p>LONGITUDE: ${response[i].address.geo.lng}</p>
-                        </li>
-                    </ul>
-                </div>
-                <p>CONTACT: ${response[i].phone}</p>
-                <p>WEBSITE: ${response[i].website}</p>
-                <div>
-                    <p>COMPANY</p>
-                    <ul>
-                        <li>
-                            <p>NAME: ${response[i].company.name}</p>
-                        </li>
-                        <li>
-                            <p>CATCHPHRASE: ${response[i].company.catchPhrase}</p>
-                        </li>
-                        <li>
-                            <p>BS: ${response[i].company.bs}</p>
-                        </li>
-                    </ul>
+            <div class="card text-white bg-danger mb-3" style ="margin: 1.2em; width:250px" >
+                <div class = "card-body">
+                    <p>ID: ${response[i].id}</p>
+                    <p>NAME: ${response[i].name}</p>
+                    <p>USERNAME: ${response[i].username}</p>
+                    <p>EMAIL: ${response[i].email}</p>
+                    <div>
+                        <p>ADDRESS</p>
+                        <ul>
+                            <li>
+                                <p>STREET: ${response[i].address.street}</p>
+                            </li>
+                            <li>
+                                <p>SUITE: ${response[i].address.suite}</p>
+                            </li>
+                            <li>
+                                <p>CITY: ${response[i].address.city}</p>
+                            </li>
+                            <li>
+                                <p>ZIPCODE: ${response[i].address.zipcode}</p>
+                            </li>
+                            <li>
+                                <p>LATITUDE: ${response[i].address.geo.lat}</p>
+                            </li>
+                            <li>
+                                <p>LONGITUDE: ${response[i].address.geo.lng}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>CONTACT: ${response[i].phone}</p>
+                    <p>WEBSITE: ${response[i].website}</p>
+                    <div>
+                        <p>COMPANY</p>
+                        <ul>
+                            <li>
+                                <p>NAME: ${response[i].company.name}</p>
+                            </li>
+                            <li>
+                                <p>CATCHPHRASE: ${response[i].company.catchPhrase}</p>
+                            </li>
+                            <li>
+                                <p>BS: ${response[i].company.bs}</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             `
@@ -97,125 +99,130 @@ var form = document.getElementById('form')
         let store = ''
 
         store += `
-        <div class = "post-detail-info">
-          <p>NAME: ${name}</p>
-          <p>USERNAME: ${userName}</p>
-          <p>EMAIL: ${email}</p>
-          <div>
-            <p>ADDRESS</p>
-            <ul>
-              <li>
-                <p>STREET: ${street}</p>
-              </li>
-              <li>
-                <p>SUITE: ${suite}</p>
-              </li>
-              <li>
-                <p>CITY: ${city}</p>
-              </li>
-              <li>
-                <p>ZIPCODE: ${zipcode}</p>
-              </li>
-              <li>
-                <p>LATITUDE: ${lat}</p>
-              </li>
-              <li>
-                <p>LONGITUDE: ${lng}</p>
-              </li>
-            </ul>
-          </div>
-          <p>CONTACT: ${contact}</p>
-          <p>WEBSITE: ${website}</p>
-          <div>
-            <p>COMPANY</p>
-            <ul>
-              <li>
-                <p>NAME: ${companyName}</p>
-              </li>
-              <li>
-                <p>CATCHPHRASE: ${catchPhrase}</p>
-              </li>
-              <li>
-                <p>BS: ${bs}</p>
-              </li>
-            </ul>
-          </div>
+        <div class="card text-white bg-warning mb-3" style ="margin: 1.2em; width:250px" >
+            <div class = "card-body">
+            <p>NAME: ${name}</p>
+            <p>USERNAME: ${userName}</p>
+            <p>EMAIL: ${email}</p>
+            <div>
+                <p>ADDRESS</p>
+                <ul>
+                <li>
+                    <p>STREET: ${street}</p>
+                </li>
+                <li>
+                    <p>SUITE: ${suite}</p>
+                </li>
+                <li>
+                    <p>CITY: ${city}</p>
+                </li>
+                <li>
+                    <p>ZIPCODE: ${zipcode}</p>
+                </li>
+                <li>
+                    <p>LATITUDE: ${lat}</p>
+                </li>
+                <li>
+                    <p>LONGITUDE: ${lng}</p>
+                </li>
+                </ul>
+            </div>
+            <p>CONTACT: ${contact}</p>
+            <p>WEBSITE: ${website}</p>
+            <div>
+                <p>COMPANY</p>
+                <ul>
+                <li>
+                    <p>NAME: ${companyName}</p>
+                </li>
+                <li>
+                    <p>CATCHPHRASE: ${catchPhrase}</p>
+                </li>
+                <li>
+                    <p>BS: ${bs}</p>
+                </li>
+                </ul>
+            </div>
+            </div>
         </div>
         `
         document.querySelector('#data-display').innerHTML = store
       })
 
-      document.querySelector('#search-data').addEventListener('click', (e) => 
-      {
-          e.preventDefault()
-      
-          const xhr1 = new XMLHttpRequest()
-          let searchData = document.getElementById('collect-data').value
-          const source1 = 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09'
-      
-          xhr1.open('GET',source1)
-          console.log('Mouse clicked')
-          console.log(searchData);
-      
-          xhr1.onreadystatechange = () =>
-          {
-              if(xhr1.readyState === 4 && xhr1.status === 200)
-              {
-                  console.log("Connection Successful");
-                  const response = JSON.parse(xhr1.responseText)
-      
-                  console.log("Working");
-                  let put = ''
-                  console.log('Working2');
-                  put = `
-                      <div class = "search-detail-info">
-                              <p>ID - ${response[searchData - 1].id}
-                              <p>NAME - ${response[searchData - 1].name}</p>
-                              <p>USERNAME - ${response[searchData - 1].username}</p>
-                              <p>EMAIL - ${response[searchData - 1].email}</p>
-                              <div>
-                                  <p>ADDRESS</p>
-                                  <ul>
-                                      <li>
-                                          <p>STREET - ${response[searchData - 1].address.street}</p>
-                                      </li>
-                                      <li>
-                                          <p>SUITE - ${response[searchData - 1].address.suite}</p>
-                                      </li>
-                                      <li>
-                                          <p>CITY - ${response[searchData - 1].address.city}</p>
-                                      </li>
-                                      <li>
-                                          <p>ZIPCODE - ${response[searchData - 1].address.zipcode}</p>
-                                      </li>
-                                      <li>
-                                          <p>LATITUDE - ${response[searchData - 1].address.geo.lat}</p>
-                                      </li>
-                                      <li>
-                                          <p>LONGITUDE - ${response[searchData - 1].address.geo.lng}</p>
-                                      </li>
-                                  </ul>
-                              </div>
-                              <p>CONTACT - ${response[searchData - 1].phone}</p>
-                              <p>WEBSITE - ${response[searchData - 1].website}</p>
-                              <div>
-                                  <p>COMPANY</p>
-                                  <ul>
-                                      <li>
-                                          <p>NAME - ${response[searchData - 1].company.name}</p>
-                                      </li>
-                                      <li>
-                                          <p>CATCHPHRASE - ${response[searchData - 1].company.catchPhrase}</p>
-                                      </li>
-                                      <li>
-                                          <p>BS - ${response[searchData - 1].company.bs}</p>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                  `
-                  document.querySelector('#search-container').innerHTML = put
-              }
-          }
-          xhr1.send()
-      })
+// DISPLAY ID SEARCH DATA
+document.querySelector('#search-data').addEventListener('click', (e) => 
+{
+    e.preventDefault()
+
+    const xhr1 = new XMLHttpRequest()
+    let searchData = document.getElementById('collect-data').value
+    const source1 = 'https://jsonplaceholder.typicode.com/users?utm_source=Mailerlite&utm_medium=E-mail&utm_campaign=Test%20Series&utm_term=2022-08-09'
+
+    xhr1.open('GET',source1)
+    console.log('Mouse clicked')
+    console.log(searchData);
+
+    xhr1.onreadystatechange = () =>
+    {
+        if(xhr1.readyState === 4 && xhr1.status === 200)
+        {
+            console.log("Connection Successful");
+            const response = JSON.parse(xhr1.responseText)
+
+            console.log("Working");
+            let put = ''
+            console.log('Working2');
+            put = `
+            <div class="card text-white bg-success mb-3" style ="margin: 1.2em; width:250px">
+                <div class = "card-body">
+                    <p>ID - ${response[searchData - 1].id}
+                    <p>NAME - ${response[searchData - 1].name}</p>
+                    <p>USERNAME - ${response[searchData - 1].username}</p>
+                    <p>EMAIL - ${response[searchData - 1].email}</p>
+                    <div>
+                        <p>ADDRESS</p>
+                        <ul>
+                            <li>
+                                <p>STREET - ${response[searchData - 1].address.street}</p>
+                            </li>
+                            <li>
+                                <p>SUITE - ${response[searchData - 1].address.suite}</p>
+                            </li>
+                            <li>
+                                <p>CITY - ${response[searchData - 1].address.city}</p>
+                            </li>
+                            <li>
+                                <p>ZIPCODE - ${response[searchData - 1].address.zipcode}</p>
+                            </li>
+                            <li>
+                                <p>LATITUDE - ${response[searchData - 1].address.geo.lat}</p>
+                            </li>
+                            <li>
+                                <p>LONGITUDE - ${response[searchData - 1].address.geo.lng}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>CONTACT - ${response[searchData - 1].phone}</p>
+                    <p>WEBSITE - ${response[searchData - 1].website}</p>
+                    <div>
+                        <p>COMPANY</p>
+                        <ul>
+                            <li>
+                                <p>NAME - ${response[searchData - 1].company.name}</p>
+                            </li>
+                            <li>
+                                <p>CATCHPHRASE - ${response[searchData - 1].company.catchPhrase}</p>
+                            </li>
+                            <li>
+                                <p>BS - ${response[searchData - 1].company.bs}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            `
+            document.querySelector('#search-container').innerHTML = put
+        }
+    }
+    xhr1.send()
+})
